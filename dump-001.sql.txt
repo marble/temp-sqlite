@@ -1,0 +1,41 @@
+
+----
+-- phpLiteAdmin database dump (http://phpliteadmin.googlecode.com)
+-- phpLiteAdmin version: 1.9.4.1
+-- Exported: 4:36pm on July 11, 2013 (CEST)
+-- database file: /home/mbless/HTDOCS/database/test.db
+----
+BEGIN TRANSACTION;
+
+----
+-- Drop table for repos
+----
+# DROP TABLE "repos";
+
+----
+-- Table structure for repos
+----
+CREATE TABLE 'repositories' (
+    'uid'                INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL default 1 ,
+    'owner'              TEXT NOT NULL,
+    'user'               TEXT NOT NULL,
+    'repourl'            TEXT NOT NULL,
+    'masterdocurl'       TEXT NOT NULL,
+    'relpathtomasterdoc' TEXT NOT NULL,
+    'publishurl'         TEXT NOT NULL,
+    'status'             TEXT NOT NULL
+);
+
+----
+-- Data dump for repos, a total of 1 rows
+----
+INSERT INTO 
+    "repos" ("uid","owner","user","repourl","masterdocurl","relpathtomasterdoc","publishurl","status")
+    VALUES
+    ('1','TYPO3 Documentation Team','-',
+    'https://git.typo3.org/Documentation/TYPO3/Guide/Security.nl_NL.git',
+    'https://git.typo3.org/Documentation/TYPO3/Guide/Security.nl_NL.git/blob/HEAD:/Documentation/Index.rst',
+    'Documentation/Index.rst',
+    'http://docs.typo3.org/typo3cms/SecurityGuide/nl/latest/',
+    'new');
+COMMIT;
